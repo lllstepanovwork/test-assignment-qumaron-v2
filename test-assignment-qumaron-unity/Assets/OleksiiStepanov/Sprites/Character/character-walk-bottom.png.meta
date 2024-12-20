@@ -1,0 +1,1014 @@
+fileFormatVersion: 2
+guid: fdff4cc62fe784e2eb658e31fdeb3b3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5010788810302104987
+    second: character-walk-bottom_0
+  - first:
+      213: 931877615998313193
+    second: character-walk-bottom_1
+  - first:
+      213: -5066913679049259662
+    second: character-walk-bottom_2
+  - first:
+      213: -5497767176286251822
+    second: character-walk-bottom_3
+  - first:
+      213: 1667121614211130229
+    second: character-walk-bottom_4
+  - first:
+      213: 1851668598293719703
+    second: character-walk-bottom_5
+  - first:
+      213: -2286354855773345544
+    second: character-walk-bottom_6
+  - first:
+      213: 8998429343915214417
+    second: character-walk-bottom_7
+  - first:
+      213: 3052931129123077038
+    second: character-walk-bottom_8
+  - first:
+      213: -5770887753075184122
+    second: character-walk-bottom_9
+  - first:
+      213: -8853937506256428163
+    second: character-walk-bottom_10
+  - first:
+      213: -8334252664366630946
+    second: character-walk-bottom_11
+  - first:
+      213: 2846455948450100055
+    second: character-walk-bottom_12
+  - first:
+      213: 2282248384728010475
+    second: character-walk-bottom_13
+  - first:
+      213: -6946693105647739974
+    second: character-walk-bottom_14
+  - first:
+      213: 3735416569953399164
+    second: character-walk-bottom_15
+  - first:
+      213: -491738418876354029
+    second: character-walk-bottom_16
+  - first:
+      213: 5018687697436371315
+    second: character-walk-bottom_17
+  - first:
+      213: -8721674252945393216
+    second: character-walk-bottom_18
+  - first:
+      213: 360150095011631470
+    second: character-walk-bottom_19
+  - first:
+      213: -2895855726454590840
+    second: character-walk-bottom_20
+  - first:
+      213: -566274254154557376
+    second: character-walk-bottom_21
+  - first:
+      213: 3230000973111321237
+    second: character-walk-bottom_22
+  - first:
+      213: 1295909273699725643
+    second: character-walk-bottom_23
+  - first:
+      213: -8694673384152063605
+    second: character-walk-bottom_24
+  - first:
+      213: 1587439121870553507
+    second: character-walk-bottom_25
+  - first:
+      213: 5612992494323356907
+    second: character-walk-bottom_26
+  - first:
+      213: 7883171255756982139
+    second: character-walk-bottom_27
+  - first:
+      213: -2032255731200299132
+    second: character-walk-bottom_28
+  - first:
+      213: 308994556265729742
+    second: character-walk-bottom_29
+  - first:
+      213: -3599484532520406953
+    second: character-walk-bottom_30
+  - first:
+      213: 8717434441193495300
+    second: character-walk-bottom_31
+  - first:
+      213: -6510063927000095405
+    second: character-walk-bottom_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: character-walk-bottom_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 658
+        width: 80
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b952f8aefd5e98540800000000000000
+      internalID: 5010788810302104987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 658
+        width: 80
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2a7b321c1beec00800000000000000
+      internalID: 931877615998313193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_2
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 656
+        width: 78
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27583b4cad4bea9b0800000000000000
+      internalID: -5066913679049259662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_3
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 656
+        width: 76
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4d7afa1e104b3b0800000000000000
+      internalID: -5497767176286251822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_4
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 656
+        width: 76
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5732e6c764ec22710800000000000000
+      internalID: 1667121614211130229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_5
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 656
+        width: 75
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79aea0397c272b910800000000000000
+      internalID: 1851668598293719703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 526
+        width: 74
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8e32f4f5c3540e0800000000000000
+      internalID: -2286354855773345544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_7
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 526
+        width: 73
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156848400d7d0ec70800000000000000
+      internalID: 8998429343915214417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_8
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 526
+        width: 74
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eabfc13dfa03e5a20800000000000000
+      internalID: 3052931129123077038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_9
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 526
+        width: 75
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e2d4ff920b9efa0800000000000000
+      internalID: -5770887753075184122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_10
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 526
+        width: 76
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73e31c8fbe702580800000000000000
+      internalID: -8853937506256428163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_11
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 527
+        width: 78
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7f218cb59c65c80800000000000000
+      internalID: -8334252664366630946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 397
+        width: 79
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7537a2c9a94a08720800000000000000
+      internalID: 2846455948450100055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_13
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 396
+        width: 81
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee0ce460dc2caf10800000000000000
+      internalID: 2282248384728010475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_14
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 396
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb1632fc63689f90800000000000000
+      internalID: -6946693105647739974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_15
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 396
+        width: 83
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c713e2c449dd6d330800000000000000
+      internalID: 3735416569953399164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_16
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 396
+        width: 82
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 312767c638efc29f0800000000000000
+      internalID: -491738418876354029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 266
+        width: 78
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3796154eed5f5a540800000000000000
+      internalID: 5018687697436371315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 267
+        width: 77
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9f482f97366f680800000000000000
+      internalID: -8721674252945393216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_19
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 266
+        width: 76
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e61ddfe6a928ff400800000000000000
+      internalID: 360150095011631470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_20
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 266
+        width: 77
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882b4e74f8adfc7d0800000000000000
+      internalID: -2895855726454590840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_21
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 266
+        width: 77
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0481babe0903428f0800000000000000
+      internalID: -566274254154557376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_22
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 264
+        width: 85
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592677295c443dc20800000000000000
+      internalID: 3230000973111321237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 132
+        width: 86
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41b1005e9efbf110800000000000000
+      internalID: 1295909273699725643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_24
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 132
+        width: 86
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81a29b9f90565780800000000000000
+      internalID: -8694673384152063605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_25
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 132
+        width: 87
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a107a18877b70610800000000000000
+      internalID: 1587439121870553507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_26
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 131
+        width: 87
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be4d3174fea55ed40800000000000000
+      internalID: 5612992494323356907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_27
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 132
+        width: 87
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7707f28d76a66d60800000000000000
+      internalID: 7883171255756982139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 87
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fed090e2afbc3e0800000000000000
+      internalID: -2032255731200299132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_29
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 86
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece8fbb69e4c94400800000000000000
+      internalID: 308994556265729742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_30
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 86
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750bb9873ef0c0ec0800000000000000
+      internalID: -3599484532520406953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_31
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 85
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b1814ff6c8af870800000000000000
+      internalID: 8717434441193495300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-walk-bottom_32
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 0
+        width: 84
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3552316a95b97a5a0800000000000000
+      internalID: -6510063927000095405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      character-walk-bottom_0: 5010788810302104987
+      character-walk-bottom_1: 931877615998313193
+      character-walk-bottom_10: -8853937506256428163
+      character-walk-bottom_11: -8334252664366630946
+      character-walk-bottom_12: 2846455948450100055
+      character-walk-bottom_13: 2282248384728010475
+      character-walk-bottom_14: -6946693105647739974
+      character-walk-bottom_15: 3735416569953399164
+      character-walk-bottom_16: -491738418876354029
+      character-walk-bottom_17: 5018687697436371315
+      character-walk-bottom_18: -8721674252945393216
+      character-walk-bottom_19: 360150095011631470
+      character-walk-bottom_2: -5066913679049259662
+      character-walk-bottom_20: -2895855726454590840
+      character-walk-bottom_21: -566274254154557376
+      character-walk-bottom_22: 3230000973111321237
+      character-walk-bottom_23: 1295909273699725643
+      character-walk-bottom_24: -8694673384152063605
+      character-walk-bottom_25: 1587439121870553507
+      character-walk-bottom_26: 5612992494323356907
+      character-walk-bottom_27: 7883171255756982139
+      character-walk-bottom_28: -2032255731200299132
+      character-walk-bottom_29: 308994556265729742
+      character-walk-bottom_3: -5497767176286251822
+      character-walk-bottom_30: -3599484532520406953
+      character-walk-bottom_31: 8717434441193495300
+      character-walk-bottom_32: -6510063927000095405
+      character-walk-bottom_4: 1667121614211130229
+      character-walk-bottom_5: 1851668598293719703
+      character-walk-bottom_6: -2286354855773345544
+      character-walk-bottom_7: 8998429343915214417
+      character-walk-bottom_8: 3052931129123077038
+      character-walk-bottom_9: -5770887753075184122
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

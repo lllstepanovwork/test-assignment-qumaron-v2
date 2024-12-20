@@ -1,0 +1,11 @@
+version: 2
+tpsheetFileNames:
+- Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-buildings.tpsheet
+- Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-general.tpsheet
+textureFileNames:
+- Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-buildings.png
+- Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-general.png
+normalmapFileNames:
+- 
+- 
+enableDebugOutput: 0
