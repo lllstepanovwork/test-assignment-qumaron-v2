@@ -14,12 +14,10 @@ namespace OleksiiStepanov.UI
                     uIPanel.gameObject.SetActive(true);
                     UIPanelAnimation.Animate(uIPanel, true, () =>
                     {
-                        uIPanel.OnUIPanelOpened();
                         onComplete?.Invoke();
                     });
                     break;
                 case UIViewAnimationType.None:
-                    uIPanel.OnUIPanelOpened();
                     uIPanel.gameObject.SetActive(true);
                     onComplete?.Invoke();
                     break;

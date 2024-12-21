@@ -8,6 +8,7 @@ namespace OleksiiStepanov.UI
     {
         [Header("Content")] 
         [SerializeField] private SafeArea safeArea;
+        [SerializeField] private GameplayPanel gameplayPanel;
         
         private readonly UIPanelOpener _uIPanelOpener = new UIPanelOpener();
         
@@ -17,7 +18,14 @@ namespace OleksiiStepanov.UI
         {
             safeArea.Init();
             
+            OpenGameplayPanel();
+            
             onComplete?.Invoke();
+        }
+
+        private void OpenGameplayPanel()
+        {
+            _uIPanelOpener.OpenPanel(gameplayPanel);
         }
     }
 }

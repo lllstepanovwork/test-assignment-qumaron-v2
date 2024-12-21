@@ -15,7 +15,5 @@ namespace OleksiiStepanov.UI
         public CanvasGroup canvasGroup;
         public Transform contentTransform;
         public UIViewAnimationType animationType;
-
-        public abstract void OnUIPanelOpened();
     }
 }
