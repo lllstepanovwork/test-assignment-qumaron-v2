@@ -1,0 +1,30 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:ad5a70963138cf17a997e79836505d07:a2cf964004b1c6b40e14293759c03b49:880380a86175d4e88208e3147f1411a7$
+#
+:format=40300
+:texture=qumaron-test-assignment-road.png
+:size=1024x256
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+road1;521;125;128;64; 0.5;0.5; 0;0;0;0
+road2;781;191;128;64; 0.5;0.5; 0;0;0;0
+road3;651;191;128;64; 0.5;0.5; 0;0;0;0
+road4;391;125;128;64; 0.5;0.5; 0;0;0;0
+road5;521;191;128;64; 0.5;0.5; 0;0;0;0
+road6;391;191;128;64; 0.5;0.5; 0;0;0;0
+road7;261;59;128;64; 0.5;0.5; 0;0;0;0
+road8;131;59;128;64; 0.5;0.5; 0;0;0;0
+road9;261;125;128;64; 0.5;0.5; 0;0;0;0
+road10;1;59;128;64; 0.5;0.5; 0;0;0;0
+road11;131;125;128;64; 0.5;0.5; 0;0;0;0
+road12;1;125;128;64; 0.5;0.5; 0;0;0;0
+road13;261;191;128;64; 0.5;0.5; 0;0;0;0
+road14;131;191;128;64; 0.5;0.5; 0;0;0;0
+road15;1;191;128;64; 0.5;0.5; 0;0;0;0

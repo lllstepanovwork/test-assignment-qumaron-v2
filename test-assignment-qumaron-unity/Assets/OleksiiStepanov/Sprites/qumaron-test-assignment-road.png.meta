@@ -1,52 +1,7 @@
 fileFormatVersion: 2
-guid: 51039e4f750f2488c8823e59b537fe12
+guid: 77f52fbb61fc44e63a8f17df7eb85a4a
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 1872306478768346543
-    second: road-atlas_0
-  - first:
-      213: 7113908700340565641
-    second: road-atlas_1
-  - first:
-      213: 4924607843742241621
-    second: road-atlas_2
-  - first:
-      213: -2075254976816759004
-    second: road-atlas_3
-  - first:
-      213: -3844020553962316278
-    second: road-atlas_4
-  - first:
-      213: 721256083506868259
-    second: road-atlas_5
-  - first:
-      213: 7152060873448490273
-    second: road-atlas_6
-  - first:
-      213: -3124567671022539626
-    second: road-atlas_7
-  - first:
-      213: -4822761069961568681
-    second: road-atlas_8
-  - first:
-      213: -502897439311568077
-    second: road-atlas_9
-  - first:
-      213: -152297300713482778
-    second: road-atlas_10
-  - first:
-      213: 7971373676710924742
-    second: road-atlas_11
-  - first:
-      213: -2149810981587293609
-    second: road-atlas_12
-  - first:
-      213: -5458775443974040953
-    second: road-atlas_13
-  - first:
-      213: 8854784914760001186
-    second: road-atlas_14
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -90,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -181,331 +136,331 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: road-atlas_0
+      name: road1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 167
-        width: 131
-        height: 67
+        x: 521
+        y: 125
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fa556a192d4cbf910800000000000000
-      internalID: 1872306478768346543
+      spriteID: aad077ba34a2a4b61924c25f305223aa
+      internalID: -1378117297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_1
+      name: road10
       rect:
         serializedVersion: 2
-        x: 174
-        y: 167
-        width: 131
-        height: 67
+        x: 1
+        y: 59
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9863c58954ea9b260800000000000000
-      internalID: 7113908700340565641
+      spriteID: 1b697347e7dcd402bbd5ba906c84bb54
+      internalID: 1544872874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_2
+      name: road11
       rect:
         serializedVersion: 2
-        x: 333
-        y: 167
-        width: 132
-        height: 67
+        x: 131
+        y: 125
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 553db500eb8b75440800000000000000
-      internalID: 4924607843742241621
+      spriteID: f8d39f184a2c64b8abab21a703e16aca
+      internalID: -1822115651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_3
+      name: road12
       rect:
         serializedVersion: 2
-        x: 494
-        y: 166
-        width: 132
-        height: 53
+        x: 1
+        y: 125
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 42fb97008963333e0800000000000000
-      internalID: -2075254976816759004
+      spriteID: 52d5c52f1b6c54c1086772b7044f393c
+      internalID: -1082581872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_4
+      name: road13
       rect:
         serializedVersion: 2
-        x: 653
-        y: 167
-        width: 132
-        height: 67
+        x: 261
+        y: 191
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a0e96c33cab47aac0800000000000000
-      internalID: -3844020553962316278
+      spriteID: 66b05f0856f934b199ed5ff745b85c84
+      internalID: 219177098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_5
+      name: road14
       rect:
         serializedVersion: 2
-        x: 814
-        y: 167
-        width: 104
-        height: 56
+        x: 131
+        y: 191
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3203489269a620a00800000000000000
-      internalID: 721256083506868259
+      spriteID: a8f074997585f464bab12a6a2ae5de0b
+      internalID: 2013352592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_6
+      name: road15
       rect:
         serializedVersion: 2
-        x: 16
-        y: 99
-        width: 114
-        height: 55
+        x: 1
+        y: 191
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1250edd9879314360800000000000000
-      internalID: 7152060873448490273
+      spriteID: dcb7945247ab848f4abd6dc545103113
+      internalID: 1065150957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_7
+      name: road2
       rect:
         serializedVersion: 2
-        x: 204
-        y: 99
-        width: 101
-        height: 55
+        x: 781
+        y: 191
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 69c2804024e43a4d0800000000000000
-      internalID: -3124567671022539626
+      spriteID: bdef5630435924fb68799915ca1a2157
+      internalID: -2041933383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_8
+      name: road3
       rect:
         serializedVersion: 2
-        x: 362
-        y: 86
-        width: 103
-        height: 67
+        x: 651
+        y: 191
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 75e9b54eb5c121db0800000000000000
-      internalID: -4822761069961568681
+      spriteID: 1d435d5fe07744a05bad94d931eefac4
+      internalID: -1350475575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_9
+      name: road4
       rect:
         serializedVersion: 2
-        x: 493
-        y: 87
-        width: 103
-        height: 67
+        x: 391
+        y: 125
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 333616381795509f0800000000000000
-      internalID: -502897439311568077
+      spriteID: 4df8ad6ae51c3486fae491da3f0d5cd2
+      internalID: 758708010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_10
+      name: road5
       rect:
         serializedVersion: 2
-        x: 653
-        y: 87
-        width: 132
-        height: 67
+        x: 521
+        y: 191
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6e5d8b2796ee2edf0800000000000000
-      internalID: -152297300713482778
+      spriteID: 7d5c0a7ae5a9a4ac487bb200d8a0a0b5
+      internalID: 1796951868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_11
+      name: road6
       rect:
         serializedVersion: 2
-        x: 842
-        y: 87
-        width: 104
-        height: 56
+        x: 391
+        y: 191
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6c11144ff1200ae60800000000000000
-      internalID: 7971373676710924742
+      spriteID: 019b7cdb0b86f40bf8ce70c27992662c
+      internalID: -2113025868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_12
+      name: road7
       rect:
         serializedVersion: 2
-        x: 493
-        y: 21
-        width: 132
-        height: 53
+        x: 261
+        y: 59
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 75a614c6d465a22e0800000000000000
-      internalID: -2149810981587293609
+      spriteID: bbc7256578f094a29b44fc04e980f071
+      internalID: -1419697869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_13
+      name: road8
       rect:
         serializedVersion: 2
-        x: 653
-        y: 7
-        width: 132
-        height: 67
+        x: 131
+        y: 59
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7825d41d7a88e34b0800000000000000
-      internalID: -5458775443974040953
+      spriteID: a02b2d2f7390a4f729aaff1fb511c87c
+      internalID: 25985308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road-atlas_14
+      name: road9
       rect:
         serializedVersion: 2
-        x: 813
-        y: 7
-        width: 132
-        height: 67
+        x: 261
+        y: 125
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2a6e1ce17f382ea70800000000000000
-      internalID: 8854784914760001186
+      spriteID: 3aa6b7b07485d43749bbabd4ff6d04e6
+      internalID: -1523559173
       vertices: []
       indices: 
       edges: []
@@ -514,7 +469,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0b28f818c78d547fe9269c9d384135c3
     internalID: 0
     vertices: []
     indices: 
@@ -524,21 +479,21 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      road-atlas_0: 1872306478768346543
-      road-atlas_1: 7113908700340565641
-      road-atlas_10: -152297300713482778
-      road-atlas_11: 7971373676710924742
-      road-atlas_12: -2149810981587293609
-      road-atlas_13: -5458775443974040953
-      road-atlas_14: 8854784914760001186
-      road-atlas_2: 4924607843742241621
-      road-atlas_3: -2075254976816759004
-      road-atlas_4: -3844020553962316278
-      road-atlas_5: 721256083506868259
-      road-atlas_6: 7152060873448490273
-      road-atlas_7: -3124567671022539626
-      road-atlas_8: -4822761069961568681
-      road-atlas_9: -502897439311568077
+      road1: -1378117297
+      road10: 1544872874
+      road11: -1822115651
+      road12: -1082581872
+      road13: 219177098
+      road14: 2013352592
+      road15: 1065150957
+      road2: -2041933383
+      road3: -1350475575
+      road4: 758708010
+      road5: 1796951868
+      road6: -2113025868
+      road7: -1419697869
+      road8: 25985308
+      road9: -1523559173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

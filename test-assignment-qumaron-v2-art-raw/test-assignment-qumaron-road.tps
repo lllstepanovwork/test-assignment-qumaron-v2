@@ -124,7 +124,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../test-assignment-qumaron-unity/Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-general.tpsheet</filename>
+                <filename>../test-assignment-qumaron-unity/Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-road.tpsheet</filename>
             </struct>
         </map>
         <key>multiPackMode</key>
@@ -161,7 +161,7 @@
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">Polygon</enum>
+            <enum type="SpriteSettings::TrimMode">None</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -173,7 +173,21 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">general/white-box-32-32.png</key>
+            <key type="filename">road/road1.png</key>
+            <key type="filename">road/road10.png</key>
+            <key type="filename">road/road11.png</key>
+            <key type="filename">road/road12.png</key>
+            <key type="filename">road/road13.png</key>
+            <key type="filename">road/road14.png</key>
+            <key type="filename">road/road15.png</key>
+            <key type="filename">road/road2.png</key>
+            <key type="filename">road/road3.png</key>
+            <key type="filename">road/road4.png</key>
+            <key type="filename">road/road5.png</key>
+            <key type="filename">road/road6.png</key>
+            <key type="filename">road/road7.png</key>
+            <key type="filename">road/road8.png</key>
+            <key type="filename">road/road9.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -182,105 +196,9 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,8,16,16</rect>
+                <rect>32,16,64,32</rect>
                 <key>scale9Paddings</key>
-                <rect>8,8,16,16</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">general/white-circle-64-64.png</key>
-            <key type="filename">general/white-ellipse-64-64.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,16,32,32</rect>
-                <key>scale9Paddings</key>
-                <rect>16,16,32,32</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">ui/btn_blue_small.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,17,191,54</rect>
-                <key>scale9Paddings</key>
-                <rect>56,25,112,50</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">ui/btn_blue_small_active.png</key>
-            <key type="filename">ui/btn_green_small.png</key>
-            <key type="filename">ui/btn_green_small_active.png</key>
-            <key type="filename">ui/btn_red_small.png</key>
-            <key type="filename">ui/btn_red_small_active.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>56,25,112,50</rect>
-                <key>scale9Paddings</key>
-                <rect>56,25,112,50</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">world/granite.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>40,20,80,40</rect>
-                <key>scale9Paddings</key>
-                <rect>40,20,80,40</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">world/tile01-blue.jpg</key>
-            <key type="filename">world/tile01-green.jpg</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>200,200,400,400</rect>
-                <key>scale9Paddings</key>
-                <rect>200,200,400,400</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">world/tile01-green-iso.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>64,38,128,75</rect>
-                <key>scale9Paddings</key>
-                <rect>64,38,128,75</rect>
+                <rect>32,16,64,32</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -291,9 +209,7 @@
             <struct type="SpriteSheet">
                 <key>files</key>
                 <array>
-                    <filename>general</filename>
-                    <filename>ui</filename>
-                    <filename>world</filename>
+                    <filename>road</filename>
                 </array>
             </struct>
         </map>

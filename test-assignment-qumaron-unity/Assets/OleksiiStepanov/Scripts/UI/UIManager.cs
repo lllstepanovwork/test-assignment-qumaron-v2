@@ -26,6 +26,7 @@ namespace OleksiiStepanov.UI
         private void OpenGameplayPanel()
         {
             _uIPanelOpener.OpenPanel(gameplayPanel);
+            gameplayPanel.Init();
         }
     }
 }
