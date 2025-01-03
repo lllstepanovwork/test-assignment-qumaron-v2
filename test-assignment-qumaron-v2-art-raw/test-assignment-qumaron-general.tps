@@ -224,6 +224,8 @@
             <key type="filename">ui/btn_green_small_active.png</key>
             <key type="filename">ui/btn_red_small.png</key>
             <key type="filename">ui/btn_red_small_active.png</key>
+            <key type="filename">ui/btn_violet_small.png</key>
+            <key type="filename">ui/btn_violet_small_active.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -266,6 +268,22 @@
                 <rect>200,200,400,400</rect>
                 <key>scale9Paddings</key>
                 <rect>200,200,400,400</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">world/tile01-green-iso-box-fill.png</key>
+            <key type="filename">world/tile01-green-iso-box.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>64,32,128,64</rect>
+                <key>scale9Paddings</key>
+                <rect>64,32,128,64</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

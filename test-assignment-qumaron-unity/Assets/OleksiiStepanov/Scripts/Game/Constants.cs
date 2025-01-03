@@ -4,6 +4,13 @@ namespace OleksiiStepanov.Game
 {
     public class Constants : MonoBehaviour
     {
+        #region UI
+
+        public const string BuildType = "Creation Mode:";
+
+        #endregion
+
+        
         #region Scenes
 
         public const string LoaderSceneName = "Loader";

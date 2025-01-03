@@ -1,4 +1,5 @@
 using System;
+using OleksiiStepanov.Gameplay;
 using OleksiiStepanov.Utils;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace OleksiiStepanov.UI
         [Header("Content")] 
         [SerializeField] private SafeArea safeArea;
         [SerializeField] private GameplayPanel gameplayPanel;
+        [SerializeField] private BuildingConfirmationDialog buildingConfirmationDialog;
         
         private readonly UIPanelOpener _uIPanelOpener = new UIPanelOpener();
         
@@ -26,7 +28,12 @@ namespace OleksiiStepanov.UI
         private void OpenGameplayPanel()
         {
             _uIPanelOpener.OpenPanel(gameplayPanel);
-            gameplayPanel.Init();
+        }
+
+        public void ShowBuildingConfirmationDialog(Transform target)
+        {
+            buildingConfirmationDialog.gameObject.SetActive(true);
+            buildingConfirmationDialog.Init(target);
         }
     }
 }

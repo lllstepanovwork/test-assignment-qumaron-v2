@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grid
   - Water
   - UI
-  - 
+  - Buildings
   - 
   - 
   - 
@@ -47,14 +47,17 @@ TagManager:
   - name: Road (Behind)
     uniqueID: 4143739955
     locked: 0
-  - name: Buildings
-    uniqueID: 915619881
-    locked: 0
   - name: Road
     uniqueID: 2712926675
     locked: 0
-  - name: Units
+  - name: GridBox
+    uniqueID: 1709235425
+    locked: 0
+  - name: Characters
     uniqueID: 1968554389
+    locked: 0
+  - name: Buildings
+    uniqueID: 915619881
     locked: 0
   - name: UI (Under)
     uniqueID: 3126261891

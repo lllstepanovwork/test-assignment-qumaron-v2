@@ -1,4 +1,5 @@
 ﻿using OleksiiStepanov.Game;
+using OleksiiStepanov.Gameplay;
 
 namespace OleksiiStepanov.Loading
 {
@@ -6,7 +7,7 @@ namespace OleksiiStepanov.Loading
     {
         public override void Enter()
         {   
-            Exit();
+            GameplayManager.Instance.Init(Exit);
         }
 
         public override LoadingStep GetStepType()

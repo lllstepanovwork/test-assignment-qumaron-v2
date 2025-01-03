@@ -139,8 +139,8 @@ TextureImporter:
       name: btn_blue_small
       rect:
         serializedVersion: 2
-        x: 453
-        y: 78
+        x: 679
+        y: 81
         width: 224
         height: 86
       alignment: 0
@@ -161,8 +161,8 @@ TextureImporter:
       name: btn_blue_small_active
       rect:
         serializedVersion: 2
-        x: 453
-        y: 166
+        x: 679
+        y: 169
         width: 224
         height: 86
       alignment: 9
@@ -183,8 +183,8 @@ TextureImporter:
       name: btn_green_small
       rect:
         serializedVersion: 2
-        x: 227
-        y: 79
+        x: 453
+        y: 78
         width: 224
         height: 86
       alignment: 0
@@ -205,8 +205,8 @@ TextureImporter:
       name: btn_green_small_active
       rect:
         serializedVersion: 2
-        x: 1
-        y: 79
+        x: 453
+        y: 166
         width: 224
         height: 86
       alignment: 9
@@ -228,7 +228,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 227
-        y: 167
+        y: 79
         width: 224
         height: 86
       alignment: 0
@@ -250,7 +250,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 167
+        y: 79
         width: 224
         height: 86
       alignment: 9
@@ -271,8 +271,8 @@ TextureImporter:
       name: granite
       rect:
         serializedVersion: 2
-        x: 836
-        y: 431
+        x: 789
+        y: 257
         width: 160
         height: 80
       alignment: 0
@@ -337,8 +337,8 @@ TextureImporter:
       name: white-box-32-32
       rect:
         serializedVersion: 2
-        x: 517
-        y: 479
+        x: 755
+        y: 257
         width: 32
         height: 32
       alignment: 0
@@ -382,7 +382,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 760
-        y: 356
+        y: 357
         width: 64
         height: 64
       alignment: 0
@@ -465,6 +465,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: btn_violet_small
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 167
+        width: 224
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2bcc7e7a09e7421695acfb48975733e
+      internalID: 860886291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: btn_violet_small_active
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 167
+        width: 224
+        height: 86
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5697674}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f871760594acd4f61b5dc1c6a1ae4cf9
+      internalID: 713677965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -485,6 +529,8 @@ TextureImporter:
       btn_green_small_active: -2000501474
       btn_red_small: 923141459
       btn_red_small_active: 374816910
+      btn_violet_small: 860886291
+      btn_violet_small_active: 713677965
       granite: -2036386016
       tile01-blue: 578149246
       tile01-green: -1044799286
