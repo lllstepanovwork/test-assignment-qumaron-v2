@@ -42,11 +42,6 @@ namespace OleksiiStepanov.Gameplay
                     float xPos = col * gridSettings.HexWidth;
                     float yPos = row * gridSettings.HexHeight;
 
-                    if (row % 2 == 1)
-                    {
-                        xPos += gridSettings.HexWidth / 2;
-                    }
-
                     xPos -= gridOffsetX;
                     yPos -= gridOffsetY;
 
@@ -54,8 +49,7 @@ namespace OleksiiStepanov.Gameplay
                     
                     GridElement gridElement = Instantiate(gridElementPrefab, position, Quaternion.identity, transform);
 
-                    gridElement.SetGridPosition(col, row);
-                    gridElement.gameObject.name = $"{col} | {row}";
+                    gridElement.Init(col, row);
                     
                     _grid[col, row] = gridElement;
                     _gridElements.Add(gridElement);
@@ -85,26 +79,13 @@ namespace OleksiiStepanov.Gameplay
 
         private GridElementNeighbors GetGridElementNeighbors(GridElement gridElement)
         {
-            (int col, int row) = gridElement.GetGridPosition();
+            Vector2Int gridPosition = gridElement.GetGridPosition();
 
-            GridElement topElement = GetElementAt(col, row + 1);
-            GridElement bottomElement = GetElementAt(col - 1, row - 1);
-            GridElement leftElement = GetElementAt(col - 1, row + 1);
-            GridElement rightElement = GetElementAt(col , row - 1);
-
-            if (row % 2 != 1)
-                return new GridElementNeighbors(
-                    topElement,
-                    bottomElement,
-                    leftElement,
-                    rightElement
-                );
+            GridElement topElement = GetElementAt(gridPosition.x + 1, gridPosition.y);
+            GridElement bottomElement = GetElementAt(gridPosition.x - 1, gridPosition.y);
+            GridElement leftElement = GetElementAt(gridPosition.x, gridPosition.y + 1);
+            GridElement rightElement = GetElementAt(gridPosition.x, gridPosition.y - 1);
             
-            topElement = GetElementAt(col + 1, row + 1);
-            bottomElement = GetElementAt(col, row - 1);
-            leftElement = GetElementAt(col, row + 1);
-            rightElement = GetElementAt(col + 1, row - 1);
-
             return new GridElementNeighbors(
                 topElement,
                 bottomElement,
@@ -132,33 +113,14 @@ namespace OleksiiStepanov.Gameplay
             return _grid;
         }
 
-        public int GetRowByPosition(Vector3 position)
+        public int GetGridRowCount()
         {
-            foreach (GridElement gridElement in _gridElements)
-            {
-                float height = gridElement.transform.position.y; 
-                if (position.y >= height - gridSettings.HexHeight / 2 && position.y <= height + gridSettings.HexHeight / 2)
-                {
-                    return gridElement.GetGridPosition().Item2;
-                }
-            }
-
-            return 25;
+            return gridSettings.Rows;
         }
-        
-        public int GetColumnByPosition(Vector3 position)
-        {
-            foreach (GridElement gridElement in _gridElements)
-            {
-                float width = gridElement.transform.position.x;
-                
-                if (position.x >= width - gridSettings.HexWidth / 2 && position.x <= width + gridSettings.HexWidth / 2)
-                {
-                    return gridElement.GetGridPosition().Item1;
-                }
-            }
 
-            return 25;
+        public int GetGridColumnCount()
+        {
+            return gridSettings.Columns;
         }
     }
 
@@ -167,8 +129,8 @@ namespace OleksiiStepanov.Gameplay
     {
         [SerializeField] private int columns = 50;
         [SerializeField] private int rows = 50;
-        [SerializeField] private float hexWidth = 2.4f;
-        [SerializeField] private float hexHeight = 0.6f;
+        [SerializeField] private float hexWidth = 1.28f;
+        [SerializeField] private float hexHeight = 1.28f;
 
         public int Columns => columns;
         public int Rows => rows;

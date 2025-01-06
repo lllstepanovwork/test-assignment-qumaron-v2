@@ -139,8 +139,8 @@ TextureImporter:
       name: archer_2
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 95
+        x: 515
+        y: 219
         width: 603
         height: 613
       alignment: 0
@@ -161,8 +161,8 @@ TextureImporter:
       name: barracks_2
       rect:
         serializedVersion: 2
-        x: 854
-        y: 310
+        x: 1
+        y: 434
         width: 704
         height: 589
       alignment: 0
@@ -175,50 +175,6 @@ TextureImporter:
       bones: []
       spriteID: 759d858050b1a47068740d5b99a5e730
       internalID: -1348896823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coalmine_2
-      rect:
-        serializedVersion: 2
-        x: 1355
-        y: 747
-        width: 386
-        height: 276
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 130a26adac5214434b9c0884f07af6ae
-      internalID: -831225220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: senat
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 321
-        width: 1019
-        height: 702
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43433d2ddb13f4ec8930ce789021989e
-      internalID: -886639056
       vertices: []
       indices: 
       edges: []
@@ -239,8 +195,6 @@ TextureImporter:
     nameFileIdTable:
       archer_2: -690922115
       barracks_2: -1348896823
-      coalmine_2: -831225220
-      senat: -886639056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

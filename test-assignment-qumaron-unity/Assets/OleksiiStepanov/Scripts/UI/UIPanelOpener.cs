@@ -9,7 +9,7 @@ namespace OleksiiStepanov.UI
             switch (uIPanel.animationType)
             {
                 case UIViewAnimationType.FromBottom:
-                    IUIViewAnimation UIPanelAnimation = new FromBottomUIViewAnimation();
+                    IUIPanelAnimation UIPanelAnimation = new UIPanelAnimationFromBottom();
 
                     uIPanel.gameObject.SetActive(true);
                     UIPanelAnimation.Animate(uIPanel, true, () =>
@@ -29,7 +29,7 @@ namespace OleksiiStepanov.UI
             switch (uIPanel.animationType)
             {
                 case UIViewAnimationType.FromBottom:
-                    IUIViewAnimation UIPanelAnimation = new FromBottomUIViewAnimation();
+                    IUIPanelAnimation UIPanelAnimation = new UIPanelAnimationFromBottom();
 
                     UIPanelAnimation.Animate(uIPanel, false, () =>
                     {

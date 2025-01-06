@@ -203,36 +203,6 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">buildings/coalmine_2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>97,69,193,138</rect>
-                <key>scale9Paddings</key>
-                <rect>97,69,193,138</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">buildings/senat.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>255,176,509,351</rect>
-                <key>scale9Paddings</key>
-                <rect>255,176,509,351</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
         </map>
         <key>fileLists</key>
         <map type="SpriteSheetMap">

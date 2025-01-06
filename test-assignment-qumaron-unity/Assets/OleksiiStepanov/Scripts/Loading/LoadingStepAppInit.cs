@@ -1,4 +1,4 @@
-﻿using OleksiiStepanov.Game;
+﻿using OleksiiStepanov.Data;
 
 namespace OleksiiStepanov.Loading
 {

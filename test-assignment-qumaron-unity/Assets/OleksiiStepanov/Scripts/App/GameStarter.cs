@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using OleksiiStepanov.Game;
+using OleksiiStepanov.Data;
 using OleksiiStepanov.Loading;
 
 namespace OleksiiStepanov.App

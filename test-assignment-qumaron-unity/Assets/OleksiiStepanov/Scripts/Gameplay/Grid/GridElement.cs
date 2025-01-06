@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace OleksiiStepanov.Gameplay
@@ -22,6 +23,18 @@ namespace OleksiiStepanov.Gameplay
         private int _column;
         private int _row;
 
+        public int SortingLayerOrder { get; private set; }
+
+        public void Init(int column, int row)
+        {
+            _column = column;
+            _row = row;
+            
+            gameObject.name = $"{_column} | {_row}";
+            
+            SortingLayerOrder = -1 * (_column + _row);
+        }
+
         public void SetNeighbors(GridElementNeighbors neighbors)
         {
             Neighbors = neighbors;
@@ -40,15 +53,17 @@ namespace OleksiiStepanov.Gameplay
         public void Occupy()
         {
             IsOccupied = true;
+            
+            gridElementSpriteRenderer.gameObject.SetActive(false);
         }
         
-        public void OccupyByRoad(Road road)
+        public void OccupyByRoad(RoadSO roadSo)
         {
             IsOccupied = true;
             IsRoad = true;
             
             roadSpriteRenderer.gameObject.SetActive(true);
-            roadSpriteRenderer.sprite = road.roadSprite;
+            roadSpriteRenderer.sprite = roadSo.roadSprite;
             
             gridElementSpriteRenderer.gameObject.SetActive(false);
         }
@@ -60,23 +75,9 @@ namespace OleksiiStepanov.Gameplay
             OnSelect?.Invoke(this);
         }
 
-        public void SetGridPosition(int column, int row)
+        public Vector2Int GetGridPosition()
         {
-            _column = column;
-            _row = row;
-        }
-
-        public (int, int) GetGridPosition()
-        {
-            return (_column, _row);
-        }
-
-        public void ResetAll()
-        {
-            IsRoad = false;
-            IsOccupied = false;
-            
-            roadSpriteRenderer.gameObject.SetActive(false);
+            return new Vector2Int(_column, _row); 
         }
 
         public void SetGridElementColor()
@@ -97,6 +98,21 @@ namespace OleksiiStepanov.Gameplay
         {
             gridElementFillSpriteRenderer.color = Color.clear;
             gridElementFillSpriteRenderer.gameObject.SetActive(false);
+        }
+        
+        public void ResetAll()
+        {
+            IsRoad = false;
+            IsOccupied = false;
+            
+            _isGridActive = false;
+            
+            roadSpriteRenderer.gameObject.SetActive(false);
+            gridElementSpriteRenderer.gameObject.SetActive(false);
+            gridElementFillSpriteRenderer.gameObject.SetActive(false);
+            gridElementCollider.gameObject.SetActive(false);
+            
+            ResetColor();
         }
     }
     

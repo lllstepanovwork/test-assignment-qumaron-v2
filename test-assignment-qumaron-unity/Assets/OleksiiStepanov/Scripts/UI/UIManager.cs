@@ -30,10 +30,15 @@ namespace OleksiiStepanov.UI
             _uIPanelOpener.OpenPanel(gameplayPanel);
         }
 
-        public void ShowBuildingConfirmationDialog(Transform target)
+        public void ShowBuildingConfirmationDialog(Func<bool> onConfirm, Action onDeny,Transform target)
         {
             buildingConfirmationDialog.gameObject.SetActive(true);
-            buildingConfirmationDialog.Init(target);
+            buildingConfirmationDialog.Init(onConfirm, onDeny,target);
+        }
+        
+        public void HideBuildingConfirmationDialog()
+        {
+            buildingConfirmationDialog.gameObject.SetActive(false);
         }
     }
 }

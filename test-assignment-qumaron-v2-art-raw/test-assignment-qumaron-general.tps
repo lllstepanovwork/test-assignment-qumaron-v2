@@ -188,7 +188,21 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">general/white-circle-64-64.png</key>
+            <key type="filename">general/white-box-empty-128-128.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,32,64,64</rect>
+                <key>scale9Paddings</key>
+                <rect>32,32,64,64</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">general/white-ellipse-64-64.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -240,22 +254,6 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">world/granite.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>40,20,80,40</rect>
-                <key>scale9Paddings</key>
-                <rect>40,20,80,40</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">world/tile01-blue.jpg</key>
             <key type="filename">world/tile01-green.jpg</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -268,37 +266,6 @@
                 <rect>200,200,400,400</rect>
                 <key>scale9Paddings</key>
                 <rect>200,200,400,400</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">world/tile01-green-iso-box-fill.png</key>
-            <key type="filename">world/tile01-green-iso-box.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>64,32,128,64</rect>
-                <key>scale9Paddings</key>
-                <rect>64,32,128,64</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">world/tile01-green-iso.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>64,38,128,75</rect>
-                <key>scale9Paddings</key>
-                <rect>64,38,128,75</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

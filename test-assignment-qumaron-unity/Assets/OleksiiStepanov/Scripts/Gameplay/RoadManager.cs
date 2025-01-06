@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using OleksiiStepanov.Game;
+using OleksiiStepanov.Data;
 
 namespace OleksiiStepanov.Gameplay
 {
     public class RoadManager : MonoBehaviour
     {
-        [SerializeField] private List<Road> roads;
+        [SerializeField] private List<RoadSO> roads;
 
         private bool _isActive = false;
         
@@ -47,34 +47,36 @@ namespace OleksiiStepanov.Gameplay
 
         private void BuildRoad(GridElement gridElement, Action onComplete)
         {
-            if (gridElement.IsOccupied) return;
+            if (gridElement == null || gridElement.IsOccupied) return;
             
-            bool top = gridElement.Neighbors.TopElement != null && gridElement.Neighbors.TopElement.IsOccupied;
-            bool bottom = gridElement.Neighbors.BottomElement != null && gridElement.Neighbors.BottomElement.IsOccupied;
-            bool left = gridElement.Neighbors.LeftElement != null && gridElement.Neighbors.LeftElement.IsOccupied;
-            bool right = gridElement.Neighbors.RightElement != null && gridElement.Neighbors.RightElement.IsOccupied;
+            bool top = gridElement.Neighbors.TopElement != null && gridElement.Neighbors.TopElement.IsOccupied && gridElement.Neighbors.TopElement.IsRoad;
+            bool bottom = gridElement.Neighbors.BottomElement != null && gridElement.Neighbors.BottomElement.IsOccupied && gridElement.Neighbors.BottomElement.IsRoad;
+            bool left = gridElement.Neighbors.LeftElement != null && gridElement.Neighbors.LeftElement.IsOccupied && gridElement.Neighbors.LeftElement.IsRoad;
+            bool right = gridElement.Neighbors.RightElement != null && gridElement.Neighbors.RightElement.IsOccupied && gridElement.Neighbors.RightElement.IsRoad;
 
             RoadType newType = CalculateRoadType(top, bottom, left, right);
 
-            Road road = GetRoadByRoadType(newType);
+            RoadSO roadSo = GetRoadByRoadType(newType);
             
-            gridElement.OccupyByRoad(road);
+            gridElement.OccupyByRoad(roadSo);
             
             onComplete?.Invoke();
         }
         
         private void UpdateTile(GridElement gridElement, Action onComplete = null)
         {
-            if (gridElement == null || !gridElement.IsOccupied) return;
+            if (gridElement == null || !gridElement.IsRoad) return;
             
-            bool top = gridElement.Neighbors.TopElement != null && gridElement.Neighbors.TopElement.IsOccupied;
-            bool bottom = gridElement.Neighbors.BottomElement != null && gridElement.Neighbors.BottomElement.IsOccupied;
-            bool left = gridElement.Neighbors.LeftElement != null && gridElement.Neighbors.LeftElement.IsOccupied;
-            bool right = gridElement.Neighbors.RightElement != null && gridElement.Neighbors.RightElement.IsOccupied;
+            bool top = gridElement.Neighbors.TopElement != null && gridElement.Neighbors.TopElement.IsRoad;
+            bool bottom = gridElement.Neighbors.BottomElement != null  && gridElement.Neighbors.BottomElement.IsRoad;
+            bool left = gridElement.Neighbors.LeftElement != null &&  gridElement.Neighbors.LeftElement.IsRoad;
+            bool right = gridElement.Neighbors.RightElement != null &&  gridElement.Neighbors.RightElement.IsRoad;
 
             RoadType newType = CalculateRoadType(top, bottom, left, right);
             
-            gridElement.OccupyByRoad(GetRoadByRoadType(newType));
+            RoadSO roadSo = GetRoadByRoadType(newType);
+            
+            gridElement.OccupyByRoad(roadSo);
             
             onComplete?.Invoke();
         }
@@ -99,7 +101,7 @@ namespace OleksiiStepanov.Gameplay
             return RoadType.CrossX;  
         }
         
-        private Road GetRoadByRoadType(RoadType roadType)
+        private RoadSO GetRoadByRoadType(RoadType roadType)
         {
             foreach (var road in roads)
             {

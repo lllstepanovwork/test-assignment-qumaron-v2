@@ -13,16 +13,18 @@ namespace OleksiiStepanov.Gameplay
             _startGridElement = startGridElement;
         }
 
-        public void CreateStartingPath(CharacterMovement character)
+        public void CreateStartingPath(Character character)
         {
-            character.Init(_startGridElement);
+            if (character == null) return;
             
-            CreateNewPath(character);
+            character.Init(_startGridElement);
         }
 
-        public void CreateNewPath(CharacterMovement character)
+        public void CreateNewPath(Character character)
         {
-            Stack<GridElement> path = GetCharacterMovingPath(character.LastElement);
+            if (character == null) return;
+            
+            Stack<GridElement> path = GetCharacterMovingPath(character.CurrentElement);
             character.SetNewPath(path);
         }
 
@@ -58,19 +60,19 @@ namespace OleksiiStepanov.Gameplay
         {
             List<GridElement> directions = new List<GridElement>();
 
-            if (gridElement.Neighbors.TopElement != null && gridElement.Neighbors.TopElement.IsOccupied && gridElement.Neighbors.TopElement != lastGridElement)
+            if (gridElement.Neighbors.TopElement != null && gridElement.Neighbors.TopElement.IsOccupied && gridElement.Neighbors.TopElement.IsRoad && gridElement.Neighbors.TopElement != lastGridElement)
             {
                 directions.Add(gridElement.Neighbors.TopElement);
             }
-            if (gridElement.Neighbors.BottomElement != null && gridElement.Neighbors.BottomElement.IsOccupied && gridElement.Neighbors.BottomElement != lastGridElement)
+            if (gridElement.Neighbors.BottomElement != null && gridElement.Neighbors.BottomElement.IsOccupied && gridElement.Neighbors.BottomElement.IsRoad && gridElement.Neighbors.BottomElement != lastGridElement)
             {
                 directions.Add(gridElement.Neighbors.BottomElement);
             }
-            if (gridElement.Neighbors.LeftElement != null && gridElement.Neighbors.LeftElement.IsOccupied && gridElement.Neighbors.LeftElement != lastGridElement)
+            if (gridElement.Neighbors.LeftElement != null && gridElement.Neighbors.LeftElement.IsOccupied && gridElement.Neighbors.LeftElement.IsRoad && gridElement.Neighbors.LeftElement != lastGridElement)
             {
                 directions.Add(gridElement.Neighbors.LeftElement);
             }
-            if (gridElement.Neighbors.RightElement != null && gridElement.Neighbors.RightElement.IsOccupied && gridElement.Neighbors.RightElement != lastGridElement)
+            if (gridElement.Neighbors.RightElement != null && gridElement.Neighbors.RightElement.IsOccupied && gridElement.Neighbors.RightElement.IsRoad && gridElement.Neighbors.RightElement != lastGridElement)
             {
                 directions.Add(gridElement.Neighbors.RightElement);
             }

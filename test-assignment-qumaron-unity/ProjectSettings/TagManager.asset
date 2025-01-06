@@ -53,10 +53,7 @@ TagManager:
   - name: GridBox
     uniqueID: 1709235425
     locked: 0
-  - name: Characters
-    uniqueID: 1968554389
-    locked: 0
-  - name: Buildings
+  - name: Buildings & Characters
     uniqueID: 915619881
     locked: 0
   - name: UI (Under)

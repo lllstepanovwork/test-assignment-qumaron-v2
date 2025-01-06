@@ -2,16 +2,12 @@ using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using OleksiiStepanov.Utils;
-using OleksiiStepanov.Game;
-using OleksiiStepanov.UI;
+using OleksiiStepanov.Data;
 
 namespace OleksiiStepanov.Gameplay
 {
     public class GameplayManager : SingletonBehaviour<GameplayManager>
-    {
-        [Header("UI")]
-        [SerializeField] private GameplayPanel gameplayPanel;
-        
+    {   
         [Header("Gameplay")]
         [SerializeField] private GridManager gridManager;
         [SerializeField] private RoadManager roadManager;
@@ -20,17 +16,17 @@ namespace OleksiiStepanov.Gameplay
         
         private CreationMode _currentCreationMode;
         
-        public void Init(Action onComplete)
+        public async void Init(Action onComplete)
         {
-            gridManager.Init(() =>
+            await gridManager.Init(() =>
             {
-                characterManager.Init();
+                buildingManager.CreateStartingBuilding();
                 
                 onComplete?.Invoke();   
             });
         }
 
-        public void SetCreationType(CreationMode creationMode)
+        public void SetCreationMode(CreationMode creationMode)
         {
             if (_currentCreationMode == creationMode)
             {
@@ -39,36 +35,36 @@ namespace OleksiiStepanov.Gameplay
             
             _currentCreationMode = creationMode;
 
-            HandleCreationModeChanged(creationMode);
+            HandleCreationModeChange(creationMode);
         }
 
-        private void HandleCreationModeChanged(CreationMode creationMode)
+        private void HandleCreationModeChange(CreationMode creationMode)
         {
+            buildingManager.ResetMode();
+            
             switch (creationMode)
             {
                 case CreationMode.None:
                     gridManager.ActivateGrid(false);
-                    buildingManager.Deactivate();
                     roadManager.Activate(false);
                     break;
                 case CreationMode.Building2x2:
-                    buildingManager.Activate(_currentCreationMode);
                     gridManager.ActivateGrid(true);
                     roadManager.Activate(false);
+                    
+                    buildingManager.Activate(_currentCreationMode);
                     break;
                 case CreationMode.Building2x3:
-                    buildingManager.Activate(_currentCreationMode);
                     gridManager.ActivateGrid(true);
                     roadManager.Activate(false);
+                    
+                    buildingManager.Activate(_currentCreationMode);
                     break;
                 case CreationMode.Road:
-                    buildingManager.Deactivate();
                     gridManager.ActivateGrid(true, true);
                     roadManager.Activate(true);
                     break;
             }
-            
-            gameplayPanel.SetCreationModeText(_currentCreationMode);
         }
 
         public async UniTask ResetAll()
@@ -77,23 +73,10 @@ namespace OleksiiStepanov.Gameplay
             await buildingManager.ResetAll();
             await characterManager.ResetAll();
             await gridManager.BuildStartingRoads();
-        }
-
-        private void OnEnable()
-        {
-            BuildingConfirmationDialog.OnConfirm += BuildingManagerOnOnBuildingPlaced;
-            BuildingConfirmationDialog.OnDeny += BuildingManagerOnOnBuildingPlaced;
-        }
-
-        private void OnDisable()
-        {
-            BuildingConfirmationDialog.OnConfirm -= BuildingManagerOnOnBuildingPlaced;
-            BuildingConfirmationDialog.OnDeny -= BuildingManagerOnOnBuildingPlaced;
-        }
-
-        private void BuildingManagerOnOnBuildingPlaced()
-        {
-            SetCreationType(CreationMode.None);
+            
+            buildingManager.CreateStartingBuilding();
+            
+            _currentCreationMode = CreationMode.None;
         }
     }    
 }

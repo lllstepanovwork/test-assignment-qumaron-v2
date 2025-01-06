@@ -7,31 +7,40 @@ using Cysharp.Threading.Tasks;
 public class CharacterManager : MonoBehaviour
 {
     [Header("Character Settings")]
-    [SerializeField] private CharacterMovement characterPrefab;
+    [SerializeField] private Character characterPrefab;
     [SerializeField] private Transform characterHolder;
-
-    public static event Action<CharacterMovement> OnCharacterSpawned;
+    public static event Action<Character> OnCharacterSpawn;
     
-    private readonly List<CharacterMovement> _currentCharacters = new List<CharacterMovement>();
-    
-    public void Init()
-    {
-        SpawnCharacter();
-    }
+    private readonly List<Character> _currentCharacters = new List<Character>();
 
     private void SpawnCharacter()
     {
-        CharacterMovement character = Instantiate(characterPrefab, characterHolder);
-        _currentCharacters.Add(character);
+        Character character = GetCharacter();
         
-        OnCharacterSpawned?.Invoke(character);
+        OnCharacterSpawn?.Invoke(character);
     }
-    
+
+    private Character GetCharacter()
+    {
+        foreach (Character character in _currentCharacters)
+        {
+            if (!character.Active)
+            {
+                return character; 
+            }
+        }
+        
+        Character newCharacter = Instantiate(characterPrefab, characterHolder);
+        _currentCharacters.Add(newCharacter);
+        
+        return newCharacter;
+    }
+
     public async UniTask ResetAll()
     {
         foreach (var character in _currentCharacters)
         {
-            Destroy(character.gameObject);
+            character.ResetCharacter();
         }
         
         await UniTask.Yield();
@@ -39,11 +48,11 @@ public class CharacterManager : MonoBehaviour
 
     private void OnEnable()
     {
-        BuildingManager.OnBuildingPlaced += SpawnCharacter;
+        BuildingManager.OnNewBuildingPlaced += SpawnCharacter;
     }
     
     private void OnDisable()
     {
-        BuildingManager.OnBuildingPlaced -= SpawnCharacter;
+        BuildingManager.OnNewBuildingPlaced -= SpawnCharacter;
     }
 }

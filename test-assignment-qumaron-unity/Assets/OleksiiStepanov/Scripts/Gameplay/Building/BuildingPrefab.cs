@@ -1,6 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using OleksiiStepanov.UI;
 
 namespace OleksiiStepanov.Gameplay
 {
@@ -8,39 +7,49 @@ namespace OleksiiStepanov.Gameplay
     {
         [Header("Content")]
         [SerializeField] private BuildingDrag buildingDrag;
-        [SerializeField] private GameObject dragCollider;
         [SerializeField] private SpriteRenderer buildingSpriteRenderer;
         
         private Tweener _startingTweener;
         private Vector3 _startingPosition;
         
-        public Building Building { get; private set; }
+        public BuildingSO BuildingSo { get; private set; }
         
-        public void Init(Building building)
+        private GridManager _gridManager;
+        
+        public void Init(BuildingSO buildingSo, GridManager gridManager)
         {
-            Building = building;
+            BuildingSo = buildingSo;
             
-            //buildingSpriteRenderer.sprite = building.buildingSprite;
+            _gridManager = gridManager;
+            
+            buildingSpriteRenderer.sprite = buildingSo.buildingSprite;
             
             _startingPosition = buildingSpriteRenderer.transform.localPosition;
             float targetPosition = _startingPosition.y + 0.2f;
             _startingTweener = buildingSpriteRenderer.transform.DOLocalMoveY(targetPosition, 0.5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
             
             gameObject.SetActive(true);
-
-            UIManager.Instance.ShowBuildingConfirmationDialog(transform);
-
-            buildingDrag.Init();
+            
+            buildingDrag.Init(buildingSo.size, gridManager);
         }
 
-        public void Place(int sortingOrder)
+        public bool Place()
         {
-            _startingTweener?.Kill();
-            buildingSpriteRenderer.transform.localPosition = _startingPosition;
+            if (buildingDrag.IsPlaceable)
+            {
+                _startingTweener?.Kill();
+                buildingSpriteRenderer.transform.localPosition = _startingPosition;
 
-            buildingSpriteRenderer.sortingOrder = sortingOrder; 
-            
-            dragCollider.SetActive(false);
+                buildingDrag.Deactivate();
+
+                buildingSpriteRenderer.sortingOrder = buildingDrag.LastElement.SortingLayerOrder;
+                
+                _gridManager.OccupyGridElementWithPattern(buildingDrag.LastElement, BuildingSo.size);
+
+                return true;
+            }
+
+            return false;
         }
 
         public void Hide()
@@ -48,15 +57,9 @@ namespace OleksiiStepanov.Gameplay
             _startingTweener?.Kill();
             buildingSpriteRenderer.transform.localPosition = _startingPosition;
             
+            buildingDrag.Deactivate();
             gameObject.SetActive(false);
         }
     }    
-    
-    public enum BuildingType
-    {
-        None,
-        Building2x2,
-        Building2x3,
-    }
 }
 

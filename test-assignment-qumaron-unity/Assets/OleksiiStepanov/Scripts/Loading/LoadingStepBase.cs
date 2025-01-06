@@ -1,5 +1,5 @@
 ﻿using System;
-using OleksiiStepanov.Game;
+using OleksiiStepanov.Data;
 using UnityEngine;
 
 namespace OleksiiStepanov.Loading

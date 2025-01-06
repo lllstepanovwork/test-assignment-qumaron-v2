@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Building (Archery)
   m_EditorClassIdentifier: 
   buildingSprite: {fileID: -690922115, guid: 429883f11fe2f4720862dcdf8136e76d, type: 3}
-  buildingType: 2
-  buildingPrefab: {fileID: 564457975386364692, guid: 57ec91ed043614431a3d1a2446dd6ea1, type: 3}
+  size: {x: 2, y: 2}

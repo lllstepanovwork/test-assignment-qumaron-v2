@@ -1,0 +1,8 @@
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/GameActivity/CMakeFiles/game.dir
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/GameActivity/CMakeFiles/rebuild_cache.dir
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/.utmp/RelWithDebInfo/1i1b6q2g/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir

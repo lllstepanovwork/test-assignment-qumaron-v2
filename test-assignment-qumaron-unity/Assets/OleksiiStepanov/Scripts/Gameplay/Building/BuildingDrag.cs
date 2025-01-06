@@ -4,20 +4,42 @@ using OleksiiStepanov.Gameplay;
 public class BuildingDrag : MonoBehaviour
 {
     [Header("Grid Settings")] 
-    private GridManager _gridManager;
-    private bool _isDragging = false;
-    private Vector3 _offset;
+    [SerializeField] private Transform dragTransform;
 
-    public void Init()
+    public GridElement LastElement { get; private set; }
+    public bool IsPlaceable {get; private set; }
+    
+    private bool _isDragging = false;
+    
+    private GridManager _gridManager;
+    
+    private Vector3 _offset;
+    private Vector2Int _size;
+
+    public void Init(Vector2Int size, GridManager gridManager)
     {
-        _gridManager = FindObjectOfType<GridManager>();
+        _size = size;
+        _gridManager = gridManager;
         
-        _gridManager.SetObjectPosition(this);
+        LastElement = _gridManager.GetAvailablePositionForBuilding(size);
+
+        if (LastElement == null)
+        {
+            LastElement = _gridManager.MiddleGridElement;
+        }
+
+        dragTransform.position = LastElement.transform.position;
+        
+        IsPlaceable = _gridManager.IsSpaceEnough(LastElement, _size);
+        
+        _gridManager.HighlightSpaceByPattern(LastElement, _size);
+
+        gameObject.SetActive(true);
     }
 
     private void OnMouseDown()
     {
-        _offset = transform.parent.position - GetMousePos();
+        _offset = dragTransform.position - GetMousePos();
         _isDragging = true;
     }
 
@@ -26,9 +48,10 @@ public class BuildingDrag : MonoBehaviour
         if (_isDragging)
         {
             Vector3 targetPosition = GetMousePos() + _offset;
-            Vector3 gridPosition = _gridManager.GetGridPosition(targetPosition);
             
-            transform.parent.position = gridPosition;
+            dragTransform.position = targetPosition;
+            
+            SnapToGrid();
         }
     }
 
@@ -40,7 +63,34 @@ public class BuildingDrag : MonoBehaviour
     private Vector3 GetMousePos()
     {
         Vector3 mousePoint = Input.mousePosition;
-        mousePoint.z = Camera.main.WorldToScreenPoint(transform.position).z;
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        
+        if (Camera.main != null)
+        {
+            mousePoint.z = Camera.main.WorldToScreenPoint(dragTransform.position).z;
+            return Camera.main.ScreenToWorldPoint(mousePoint);
+        }
+        
+        return Vector3.zero;
+    }
+    
+    private void SnapToGrid()
+    {
+        Vector2Int nearestGridPos = _gridManager.GetNearestGridPosition(dragTransform.position);
+        LastElement = _gridManager.GetGridElementByPosition(nearestGridPos);
+        
+        Vector3 snapPosition = LastElement.transform.position;
+        
+        dragTransform.position = snapPosition;
+        
+        IsPlaceable = _gridManager.IsSpaceEnough(LastElement, _size);
+        
+        _gridManager.HighlightSpaceByPattern(LastElement, _size);
+    }
+
+    public void Deactivate()
+    {
+        _gridManager.ResetGridElementHighlight();
+        
+        gameObject.SetActive(false);
     }
 }

@@ -1,0 +1,1 @@
+/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1i1b6q2g/obj/arm64-v8a

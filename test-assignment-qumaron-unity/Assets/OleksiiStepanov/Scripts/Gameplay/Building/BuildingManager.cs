@@ -2,7 +2,8 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using OleksiiStepanov.Game;
+using OleksiiStepanov.Data;
+using OleksiiStepanov.UI;
 
 namespace OleksiiStepanov.Gameplay
 {
@@ -12,133 +13,134 @@ namespace OleksiiStepanov.Gameplay
         [SerializeField] private GridManager gridManager;
         
         [Header("Settings")]
-        [SerializeField] private List<Building> buildings;
+        [SerializeField] private List<BuildingSO> buildings;
         [SerializeField] private Transform buildingHolder;
         
-        [SerializeField] private List<BuildingPrefab> _activeBuildings = new List<BuildingPrefab>();
-        [SerializeField] private List<BuildingPrefab> _buildingPool = new List<BuildingPrefab>();
+        [SerializeField] private BuildingPrefab buildingPrefab;
+        
+        private readonly List<BuildingPrefab> _activeBuildings = new List<BuildingPrefab>();
+        private readonly List<BuildingPrefab> _buildingPool = new List<BuildingPrefab>();
 
         private BuildingPrefab _activeBuildingPrefab;
-        private BuildingType _activeBuildingType = BuildingType.None;
         
-        public static event Action OnBuildingPlaced;
+        public static event Action OnNewBuildingPlaced;
 
-        private int _sortingOrder = 0;
-        
-        private void OnEnable()
+        public void CreateStartingBuilding()
         {
-            BuildingConfirmationDialog.OnConfirm += OnBuildingConfirmed;
-            BuildingConfirmationDialog.OnDeny += OnBuildingDenied;
+            CreateBuildingPrefab(new Vector2Int(2,2), false, () =>
+            {
+                TryToPlaceBuilding();                
+            });
         }
 
-        private void OnDisable()
-        {
-            BuildingConfirmationDialog.OnConfirm -= OnBuildingConfirmed;
-            BuildingConfirmationDialog.OnDeny -= OnBuildingDenied;
-        }
-        
         public void Activate(CreationMode creationMode)
         {
+            Vector2Int size;
+            
             switch (creationMode)
             {
                 case CreationMode.Building2x2:
-                    _activeBuildingType = BuildingType.Building2x2;
-                    CreateBuilding(BuildingType.Building2x2);
+                    size = new Vector2Int(2,2);
+                    CreateBuildingPrefab(size);
                     break;
                 case CreationMode.Building2x3:
-                    _activeBuildingType = BuildingType.Building2x3;
-                    CreateBuilding(BuildingType.Building2x3);
+                    size = new Vector2Int(2,3);
+                    CreateBuildingPrefab(size);
                     break;
             }
         }
 
-        public void Deactivate()
+        private void CreateBuildingPrefab(Vector2Int size, bool withConfirmation = true, Action onComplete = null)
         {
-            if (_activeBuildingPrefab != null)
-            {
-                OnBuildingDenied();    
-            }
-        }
+            BuildingSO buildingSo = GetBuildingBySize(size);
 
-        private void CreateBuilding(BuildingType buildingType)
-        {
-            Building building = GetBuildingByType(buildingType);
-
-            if (building == null)
+            if (buildingSo == null)
             {
                 Debug.LogError("Wrong building type!");
                 return;
             }
 
-            BuildingPrefab newBuilding = GetBuildingByTypeFromThePool(buildingType);
+            BuildingPrefab newBuilding = GetBuildingBySizeFromThePool(size);
             
-            if (newBuilding == null)
-            {
-                newBuilding = Instantiate(building.buildingPrefab, buildingHolder);
-            }
-            
-            newBuilding.Init(building);
-            newBuilding.transform.position = gridManager.MiddleGridElement.transform.position - gridManager.MiddleGridElement.Neighbors.BottomElement.transform.position;
+            newBuilding.Init(buildingSo, gridManager);
             
             _activeBuildingPrefab = newBuilding;
+
+            if (withConfirmation)
+            {
+                UIManager.Instance.ShowBuildingConfirmationDialog(TryToPlaceBuilding, OnBuildingDenied, newBuilding.transform);    
+            }
+            
+            onComplete?.Invoke();
         }
 
-        private BuildingPrefab GetBuildingByTypeFromThePool(BuildingType buildingType)
+        private BuildingPrefab GetBuildingBySizeFromThePool(Vector2Int size)
         {
-            foreach (var buildingPrefab in _buildingPool)
+            foreach (var buildingInPool in _buildingPool)
             {
-                if (buildingPrefab.Building.buildingType == buildingType)
+                if (buildingInPool.BuildingSo.size == size)
                 {
-                    _buildingPool.Remove(buildingPrefab);
-                    return buildingPrefab;
+                    _buildingPool.Remove(buildingInPool);
+                    
+                    return buildingInPool;
                 }
             }
             
-            return null;
-        }
-
-        private Building GetBuildingByType(BuildingType buildingType)
-        {
-            return buildings.Find(building => building.buildingType == buildingType);
-        }
-
-        private void OnBuildingConfirmed()
-        {
-            _sortingOrder--;
+            BuildingPrefab newBuildingPrefab = Instantiate(buildingPrefab, buildingHolder);
             
-            _activeBuildingPrefab.Place(_sortingOrder);
+            return newBuildingPrefab;
+        }
+
+        private BuildingSO GetBuildingBySize(Vector2Int size)
+        {
+            return buildings.Find(building => building.size == size);
+        }
+
+        private bool TryToPlaceBuilding()
+        {
+            if (!_activeBuildingPrefab.Place())
+            {
+                Debug.Log("Building placement failed.");
+                return false;
+            }
+    
             _activeBuildings.Add(_activeBuildingPrefab);
             
-            _activeBuildingPrefab = null;
+            OnNewBuildingPlaced?.Invoke();
             
-            OnBuildingPlaced?.Invoke();
+            _activeBuildingPrefab = null;
+
+            return true;
         }
         
         private void OnBuildingDenied()
         {
+            if (_activeBuildingPrefab == null) return;
+            
             _activeBuildingPrefab.Hide();
             _buildingPool.Add(_activeBuildingPrefab);
-            
-            _activeBuildingType = BuildingType.None;
-            
+
             _activeBuildingPrefab = null;
+        }
+
+        public void ResetMode()
+        {
+            OnBuildingDenied();
+            
+            UIManager.Instance.HideBuildingConfirmationDialog();
         }
 
         public async UniTask ResetAll()
         {
-            if (_activeBuildingPrefab != null)
-            {
-                _activeBuildingPrefab.Hide();
-                _buildingPool.Add(_activeBuildingPrefab);
-                
-                _activeBuildingPrefab = null;
-            }
+            ResetMode();
 
             foreach (var building in _activeBuildings)
             {
-                building.Hide();
                 _buildingPool.Add(building);
+                building.Hide();
             }
+            
+            _activeBuildings.Clear();
             
             await UniTask.Yield();
         }

@@ -16,8 +16,6 @@ namespace OleksiiStepanov.Gameplay
         private GridElement[,] _grid;
 
         public GridElement MiddleGridElement { get; private set; }
-        
-        private bool _isGridActive;
 
         public async UniTask Init(Action onComplete = null)
         {
@@ -27,60 +25,198 @@ namespace OleksiiStepanov.Gameplay
             _gridElements = gridCreator.GetGridElements();
             _grid = gridCreator.GetGridArray();
 
-            MiddleGridElement = gridCreator.GetElementAt(25, 25);
+            MiddleGridElement = gridCreator.GetElementAt(gridCreator.GetGridColumnCount() / 2, gridCreator.GetGridRowCount() / 2);
             
             _pathFinder.Init(MiddleGridElement);
+            
+            transform.Rotate(new Vector3(60, 0, 45));
             
             onComplete?.Invoke();
         }
         
         private void OnEnable()
         {
-            CharacterManager.OnCharacterSpawned += OnCharacterSpawned; 
-            CharacterMovement.OnPathCompleted += OnCharacterPathCompleted;
+            CharacterManager.OnCharacterSpawn += OnCharacterSpawn; 
+            Character.OnPathCompleted += OnCharacterPathCompleted;
         }
 
         private void OnDisable()
         {
-            CharacterManager.OnCharacterSpawned -= OnCharacterSpawned;
-            CharacterMovement.OnPathCompleted -= OnCharacterPathCompleted;
+            CharacterManager.OnCharacterSpawn -= OnCharacterSpawn;
+            Character.OnPathCompleted -= OnCharacterPathCompleted;
         }
         
-        private void OnCharacterSpawned(CharacterMovement character)
+        private void OnCharacterSpawn(Character character)
         {
             _pathFinder.CreateStartingPath(character);
         }
 
-        private void OnCharacterPathCompleted(CharacterMovement characterMovement)
+        private void OnCharacterPathCompleted(Character character)
         {
-            _pathFinder.CreateNewPath(characterMovement);
+            _pathFinder.CreateNewPath(character);
         }
 
         public async UniTask BuildStartingRoads()
         {
-            roadManager.BuildRoad(gridCreator.GetElementAt(23,21));
-            roadManager.BuildRoad(gridCreator.GetElementAt(24,22));
-            roadManager.BuildRoad(gridCreator.GetElementAt(24,23));
-            roadManager.BuildRoad(gridCreator.GetElementAt(25,24));
+            roadManager.BuildRoad(gridCreator.GetElementAt(22,25));
+            roadManager.BuildRoad(gridCreator.GetElementAt(23,25));
+            roadManager.BuildRoad(gridCreator.GetElementAt(24,25));
             roadManager.BuildRoad(gridCreator.GetElementAt(25,25));
-            roadManager.BuildRoad(gridCreator.GetElementAt(26,26));
+            roadManager.BuildRoad(gridCreator.GetElementAt(25,25));
+            roadManager.BuildRoad(gridCreator.GetElementAt(26,25));
             
             await UniTask.Yield();
         }
 
         public void ActivateGrid(bool activate, bool withCollider = false)
         {
-            if (activate != _isGridActive)
+            foreach (var gridElement in _gridElements)
             {
-                _isGridActive = activate;
-            
-                foreach (var gridElement in _gridElements)
-                {
-                    gridElement.Activate(activate, withCollider);
-                }    
+                gridElement.Activate(activate, withCollider);
             }
         }
 
+        public Vector2Int GetNearestGridPosition(Vector3 worldPosition)
+        {
+            float minDistance = float.MaxValue;
+            Vector2Int nearestGridPos = Vector2Int.zero;
+
+            ResetGridElementHighlight();
+            
+            foreach (var element in _gridElements)
+            {
+                float distance = Vector3.Distance(worldPosition, element.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestGridPos = element.GetGridPosition();
+                }
+            }
+            
+            return nearestGridPos;
+        }
+
+        public GridElement GetGridElementByPosition(Vector2Int gridPos)
+        {
+            return _grid[gridPos.x, gridPos.y];
+        }
+
+        public void HighlightSpaceByPattern(GridElement centralElement, Vector2Int pattern)
+        {
+            List<GridElement> elementsToHighlight = GetGridElementsByPattern(centralElement, pattern);
+
+            foreach (var element in elementsToHighlight)
+            {
+                element.SetGridElementColor();
+            }
+        }
+        
+        public bool IsSpaceEnough(GridElement targetElement, Vector2Int pattern)
+        {
+            List<GridElement> elementsToCheck = GetGridElementsByPattern(targetElement, pattern);
+
+            foreach (var element in elementsToCheck)
+            {
+                if (element.IsOccupied)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        
+        public void OccupyGridElementWithPattern(GridElement targetElement, Vector2Int pattern)
+        {
+            List<GridElement> elementsToOccupy = GetGridElementsByPattern(targetElement, pattern);
+
+            foreach (var element in elementsToOccupy)
+            {
+                element.Occupy();
+            }
+        }
+
+        private List<GridElement> GetGridElementsByPattern(GridElement centralElement, Vector2Int pattern)
+        {
+            List<GridElement> matchingElements = new List<GridElement>();
+
+            int startCol = centralElement.GetGridPosition().x;
+            int startRow = centralElement.GetGridPosition().y;
+
+            int width = pattern.x;
+            int height = pattern.y;
+
+            for (int xOffset = 0; xOffset < width; xOffset++)
+            {
+                for (int yOffset = 0; yOffset < height; yOffset++)
+                {
+                    int targetCol = startCol + xOffset;
+                    int targetRow = startRow + yOffset;
+
+                    if (targetCol >= 0 && targetCol < gridCreator.GetGridColumnCount() &&
+                        targetRow >= 0 && targetRow < gridCreator.GetGridRowCount())
+                    {
+                        GridElement gridElement = _grid[targetCol, targetRow];
+                        if (gridElement != null)
+                        {
+                            matchingElements.Add(gridElement);
+                        }
+                    }
+                }
+            }
+    
+            return matchingElements;
+        }
+
+        public GridElement GetAvailablePositionForBuilding(Vector2Int pattern)
+        {
+            List<GridElement> emptyElementsByRoad = GetAvailableElementsByTheRoad();
+
+            foreach (var element in emptyElementsByRoad)
+            {
+                if (IsSpaceEnough(element, pattern))
+                {
+                    return element;
+                }
+            }
+            
+            return null;
+        }
+
+        private List<GridElement> GetAvailableElementsByTheRoad()
+        {
+            List<GridElement> emptyElementsByRoad = new List<GridElement>();
+
+            foreach (var element in _gridElements)
+            {
+                if (element.IsRoad)
+                {
+                    AddToListByOccupyStatus(element.Neighbors.TopElement, emptyElementsByRoad);
+                    AddToListByOccupyStatus(element.Neighbors.BottomElement, emptyElementsByRoad);
+                    AddToListByOccupyStatus(element.Neighbors.LeftElement, emptyElementsByRoad);
+                    AddToListByOccupyStatus(element.Neighbors.RightElement, emptyElementsByRoad);
+                }
+            }
+
+            return emptyElementsByRoad;
+        }
+
+        private void AddToListByOccupyStatus(GridElement element, List<GridElement> list)
+        {
+            if (element != null && !element.IsOccupied)
+            {
+                list.Add(element);
+            }
+        }
+
+        public void ResetGridElementHighlight()
+        {
+            foreach (var element in _gridElements)
+            {
+                element.ResetColor();
+            }
+        }
+        
         public async UniTask ResetAll()
         {
             foreach (var gridElement in _gridElements)
@@ -89,49 +225,6 @@ namespace OleksiiStepanov.Gameplay
             }
             
             await UniTask.Yield();
-        }
-
-        public void SetObjectPosition(BuildingDrag buildingDrag)
-        {
-            GridElement gridElement = gridCreator.GetElementAt(25, 25);
-            
-            buildingDrag.transform.parent.position = gridElement.transform.position;
-        }
-
-        public Vector3 GetGridPosition(Vector3 worldPosition)
-        {
-            int column = gridCreator.GetColumnByPosition(worldPosition);
-            int row = gridCreator.GetRowByPosition(worldPosition);
-            
-            Debug.Log(column + ", " + row);
-            
-            GridElement gridElement = gridCreator.GetElementAt(column, row);
-            
-            return gridElement.transform.position;
-        }
-
-        public bool IsCellOccupied(int column, int row)
-        {
-            if (column < 0 || column >= 50 || row < 0 || row >= 50)
-                return true;
-            return _grid[column, row].IsOccupied;
-        }
-
-        public void HighlightArea(Vector2Int start, Vector2Int size, bool canPlace)
-        {
-            for (int x = 0; x < size.x; x++)
-            {
-                for (int y = 0; y < size.y; y++)
-                {
-                    int col = start.x + x;
-                    int row = start.y + y;
-                
-                    if (col >= 0 && col < 50 && row >= 0 && row < 50)
-                    {
-                        _grid[col, row].SetGridElementColor();
-                    }
-                }
-            }
         }
     }
 }
