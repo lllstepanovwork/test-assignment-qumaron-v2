@@ -209,6 +209,20 @@ namespace OleksiiStepanov.Gameplay
             }
         }
 
+        public float GetGridBorderX()
+        {
+            //highest point in the grid (before rotation)
+            int index = gridCreator.GetGridRowCount() - 1;
+            
+            return _gridElements[index].transform.position.x;
+        }
+        
+        public float GetGridBorderY()
+        {
+            //lowest point in the grid
+            return _gridElements[0].transform.position.y;
+        }
+
         public void ResetGridElementHighlight()
         {
             foreach (var element in _gridElements)

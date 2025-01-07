@@ -9,6 +9,7 @@ namespace OleksiiStepanov.Gameplay
     public class GameplayManager : SingletonBehaviour<GameplayManager>
     {   
         [Header("Gameplay")]
+        [SerializeField] private PanManager panManager;
         [SerializeField] private GridManager gridManager;
         [SerializeField] private RoadManager roadManager;
         [SerializeField] private BuildingManager buildingManager;
@@ -21,6 +22,14 @@ namespace OleksiiStepanov.Gameplay
             await gridManager.Init(() =>
             {
                 buildingManager.CreateStartingBuilding();
+
+                float gridBorderX = gridManager.GetGridBorderX();
+                float gridBorderY = gridManager.GetGridBorderY();
+                
+                Vector2 worldBorder = new Vector2(gridBorderX, gridBorderY);
+                
+                panManager.Init(worldBorder);
+                panManager.EnablePanning(true);
                 
                 onComplete?.Invoke();   
             });
@@ -40,6 +49,7 @@ namespace OleksiiStepanov.Gameplay
 
         private void HandleCreationModeChange(CreationMode creationMode)
         {
+            panManager.EnablePanning(false);
             buildingManager.ResetMode();
             
             switch (creationMode)
@@ -47,17 +57,16 @@ namespace OleksiiStepanov.Gameplay
                 case CreationMode.None:
                     gridManager.ActivateGrid(false);
                     roadManager.Activate(false);
+                    panManager.EnablePanning(true);
                     break;
                 case CreationMode.Building2x2:
                     gridManager.ActivateGrid(true);
                     roadManager.Activate(false);
-                    
                     buildingManager.Activate(_currentCreationMode);
                     break;
                 case CreationMode.Building2x3:
                     gridManager.ActivateGrid(true);
                     roadManager.Activate(false);
-                    
                     buildingManager.Activate(_currentCreationMode);
                     break;
                 case CreationMode.Road:
@@ -75,6 +84,8 @@ namespace OleksiiStepanov.Gameplay
             await gridManager.BuildStartingRoads();
             
             buildingManager.CreateStartingBuilding();
+            
+            panManager.ResetPanning();
             
             _currentCreationMode = CreationMode.None;
         }
