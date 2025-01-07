@@ -90,6 +90,11 @@ namespace OleksiiStepanov.Gameplay
             if (top && bottom && right) return RoadType.CrossTRight;
             if (bottom && left && right) return RoadType.CrossTBottom;
             
+            if (bottom && !(top || left || right)) return RoadType.TopRightEnd;
+            if (top && !(left || right || bottom)) return RoadType.BottomLeftEnd;
+            if (left && !(top || right || bottom)) return RoadType.BottomRightEnd;
+            if (right && !(top || left || bottom)) return RoadType.TopLeftEnd;
+            
             if (top && right) return RoadType.TurnLeft;
             if (bottom && right) return RoadType.TurnTop;
             if (left && top) return RoadType.TurnBottom;

@@ -27,6 +27,10 @@
         TurnBottom,
         TurnLeft,
         TurnRight,
+        TopLeftEnd,
+        TopRightEnd,
+        BottomLeftEnd,
+        BottomRightEnd,
     }
     
     #endregion

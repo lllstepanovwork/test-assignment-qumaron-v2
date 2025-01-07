@@ -4904,5 +4904,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3f2b85a892f48daac04c8a7f0fd315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 6341830500616788181}
-  particleSystemRenderer: {fileID: 8778232919113892011}
+  particles: {fileID: 6341830500616788181}
+  particlesRenderer: {fileID: 8778232919113892011}

@@ -4,20 +4,20 @@ namespace OleksiiStepanov.Gameplay
 {
     public class PopEffect : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem particleSystem;
-        [SerializeField] private ParticleSystemRenderer particleSystemRenderer;
+        [SerializeField] private ParticleSystem particles;
+        [SerializeField] private ParticleSystemRenderer particlesRenderer;
 
         public void Init(Vector3 position, int sortingOrder)
         {
             transform.position = position;
-            particleSystemRenderer.sortingOrder = sortingOrder;
+            particlesRenderer.sortingOrder = sortingOrder;
 
-            particleSystem.Play();
+            particles.Play();
         }
 
         public bool IsPlaying()
         {
-            return particleSystem.isPlaying;
+            return particles.isPlaying;
         }
     }
 }
