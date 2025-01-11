@@ -3,11 +3,15 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using OleksiiStepanov.Utils;
 using OleksiiStepanov.Data;
+using OleksiiStepanov.UI;
 
 namespace OleksiiStepanov.Gameplay
 {
     public class GameplayManager : SingletonBehaviour<GameplayManager>
     {   
+        [Header("UI")]
+        [SerializeField] private GameplayPanel gameplayPanel;
+        
         [Header("Gameplay")]
         [SerializeField] private PanManager panManager;
         [SerializeField] private GridManager gridManager;
@@ -37,20 +41,11 @@ namespace OleksiiStepanov.Gameplay
 
         public void SetCreationMode(CreationMode creationMode)
         {
-            if (_currentCreationMode == creationMode)
-            {
-                creationMode = CreationMode.None;
-            }
-            
             _currentCreationMode = creationMode;
 
-            HandleCreationModeChange(creationMode);
-        }
-
-        private void HandleCreationModeChange(CreationMode creationMode)
-        {
             panManager.EnablePanning(false);
             buildingManager.ResetMode();
+            roadManager.ConfirmRoads();
             
             switch (creationMode)
             {
@@ -74,10 +69,13 @@ namespace OleksiiStepanov.Gameplay
                     roadManager.Activate(true);
                     break;
             }
+
+            gameplayPanel.SetCreationMode(_currentCreationMode);
         }
 
         public async UniTask ResetAll()
         {
+            roadManager.ResetAll();
             await gridManager.ResetAll();
             await buildingManager.ResetAll();
             await characterManager.ResetAll();
@@ -88,6 +86,18 @@ namespace OleksiiStepanov.Gameplay
             panManager.ResetPanning();
             
             _currentCreationMode = CreationMode.None;
+            
+            gameplayPanel.SetCreationMode(_currentCreationMode);
+        }
+
+        public void UndoLastRoadAction()
+        {
+            roadManager.UndoLastAction();
+        }
+        
+        public void RedoLastRoadAction()
+        {
+            roadManager.RedoLastAction();
         }
     }    
 }

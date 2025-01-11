@@ -59,25 +59,36 @@ namespace OleksiiStepanov.Gameplay
         private List<GridElement> GetValidNeighbors(GridElement gridElement, GridElement lastGridElement)
         {
             List<GridElement> directions = new List<GridElement>();
-
-            if (gridElement.Neighbors.TopElement != null && gridElement.Neighbors.TopElement.IsOccupied && gridElement.Neighbors.TopElement.IsRoad && gridElement.Neighbors.TopElement != lastGridElement)
+            
+            if (IsValidDirection(gridElement.Neighbors.TopElement, lastGridElement))
             {
                 directions.Add(gridElement.Neighbors.TopElement);
             }
-            if (gridElement.Neighbors.BottomElement != null && gridElement.Neighbors.BottomElement.IsOccupied && gridElement.Neighbors.BottomElement.IsRoad && gridElement.Neighbors.BottomElement != lastGridElement)
+            if (IsValidDirection(gridElement.Neighbors.BottomElement, lastGridElement))
             {
                 directions.Add(gridElement.Neighbors.BottomElement);
             }
-            if (gridElement.Neighbors.LeftElement != null && gridElement.Neighbors.LeftElement.IsOccupied && gridElement.Neighbors.LeftElement.IsRoad && gridElement.Neighbors.LeftElement != lastGridElement)
+            if (IsValidDirection(gridElement.Neighbors.LeftElement, lastGridElement))
             {
                 directions.Add(gridElement.Neighbors.LeftElement);
             }
-            if (gridElement.Neighbors.RightElement != null && gridElement.Neighbors.RightElement.IsOccupied && gridElement.Neighbors.RightElement.IsRoad && gridElement.Neighbors.RightElement != lastGridElement)
+            if (IsValidDirection(gridElement.Neighbors.RightElement, lastGridElement))
             {
                 directions.Add(gridElement.Neighbors.RightElement);
             }
 
             return directions;
+        }
+
+        private bool IsValidDirection(GridElement gridElement, GridElement lastGridElement)
+        {
+            if (gridElement == null) return false;
+            if (gridElement == lastGridElement ) return false;
+            if (!gridElement.IsOccupied) return false;
+            if (!gridElement.IsRoad) return false;
+            if (!gridElement.IsConfirmRoad) return false;
+            
+            return true;
         }
     }
 }

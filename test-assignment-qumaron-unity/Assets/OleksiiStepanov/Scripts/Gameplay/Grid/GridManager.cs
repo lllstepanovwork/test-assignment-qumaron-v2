@@ -65,6 +65,8 @@ namespace OleksiiStepanov.Gameplay
             roadManager.BuildRoad(gridCreator.GetElementAt(25,25));
             roadManager.BuildRoad(gridCreator.GetElementAt(26,25));
             
+            roadManager.ConfirmRoads();
+            
             await UniTask.Yield();
         }
 

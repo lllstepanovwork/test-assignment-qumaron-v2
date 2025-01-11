@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 
 namespace OleksiiStepanov.Gameplay
@@ -15,7 +14,9 @@ namespace OleksiiStepanov.Gameplay
         public static event Action<GridElement> OnSelect;
         
         public GridElementNeighbors Neighbors { get; private set; }
+        
         public bool IsRoad { get; private set; }
+        public bool IsConfirmRoad { get; private set; }
         public bool IsOccupied { get; private set; }
         
         private bool _isGridActive;
@@ -67,7 +68,21 @@ namespace OleksiiStepanov.Gameplay
             
             gridElementSpriteRenderer.gameObject.SetActive(false);
         }
-        
+
+        public void ResetRoadOccupation()
+        {
+            IsOccupied = false;
+            IsRoad = false;
+            
+            roadSpriteRenderer.gameObject.SetActive(false);
+            gridElementSpriteRenderer.gameObject.SetActive(true);
+        }
+
+        public void ConfirmRoadOccupation()
+        {
+            IsConfirmRoad = true;
+        }
+
         public void Select()
         {
             if (IsOccupied || !_isGridActive) return;
@@ -104,6 +119,7 @@ namespace OleksiiStepanov.Gameplay
         {
             IsRoad = false;
             IsOccupied = false;
+            IsConfirmRoad = false;
             
             _isGridActive = false;
             

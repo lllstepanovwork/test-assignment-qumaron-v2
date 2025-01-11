@@ -11,6 +11,8 @@ namespace OleksiiStepanov.Gameplay
 
         private bool _isActive = false;
         
+        private readonly RoadCommander _roadCommander = new RoadCommander();
+        
         private void OnSelect(GridElement gridElement)
         {
             if (_isActive)
@@ -58,7 +60,7 @@ namespace OleksiiStepanov.Gameplay
 
             RoadSO roadSo = GetRoadByRoadType(newType);
             
-            gridElement.OccupyByRoad(roadSo);
+            _roadCommander.CreateNewBuildCommand(gridElement, roadSo);
             
             onComplete?.Invoke();
         }
@@ -117,6 +119,38 @@ namespace OleksiiStepanov.Gameplay
             }
 
             return null;
+        }
+
+        public void UndoLastAction()
+        {
+            _roadCommander.Undo((gridElement) =>
+            {
+                UpdateTile(gridElement.Neighbors.TopElement);
+                UpdateTile(gridElement.Neighbors.BottomElement);
+                UpdateTile(gridElement.Neighbors.LeftElement);
+                UpdateTile(gridElement.Neighbors.RightElement); 
+            });
+        }
+        
+        public void RedoLastAction()
+        {
+            _roadCommander.Redo((gridElement) =>
+            {
+                UpdateTile(gridElement.Neighbors.TopElement);
+                UpdateTile(gridElement.Neighbors.BottomElement);
+                UpdateTile(gridElement.Neighbors.LeftElement);
+                UpdateTile(gridElement.Neighbors.RightElement); 
+            });
+        }
+
+        public void ResetAll()
+        {
+            _roadCommander.ResetAll();
+        }
+
+        public void ConfirmRoads()
+        {
+            _roadCommander.Confirm();
         }
     }
 }
