@@ -1,12 +1,12 @@
 # ninja log v5
-7	304	1736265358062818488	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	ef231fd120b2a543
-307	555	1736265358299765477	/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1i1b6q2g/obj/arm64-v8a/libswappywrapper.so	56c37a9fb8e92d28
-3	842	1736265358601174589	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	700d4456bf8fe37
-2	864	1736265358622608269	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	4fcb0c599f55cc
-4	877	1736265358636659458	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	7823e457794ffad3
-1	882	1736265358641447605	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a669150797a26f2e
-4	944	1736265358703825803	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7a4c1383efa7933
+1214	1333	1736265359090266091	/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1i1b6q2g/obj/arm64-v8a/libgame.so	6accd104ce302b6e
+1	1214	1736265358973344771	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	1d9f067bf42ed42c
 2	986	1736265358746395162	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	19dc07c673328529
 3	1111	1736265358872227814	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d244a60eebe6071a
-1	1214	1736265358973344771	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	1d9f067bf42ed42c
-1214	1333	1736265359090266091	/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1i1b6q2g/obj/arm64-v8a/libgame.so	6accd104ce302b6e
+4	944	1736265358703825803	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7a4c1383efa7933
+1	882	1736265358641447605	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a669150797a26f2e
+2	864	1736265358622608269	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	4fcb0c599f55cc
+3	842	1736265358601174589	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	700d4456bf8fe37
+307	555	1736265358299765477	/Users/oleksiistepanov/Development/test-assignments/test-assignment-qumaron-v2/test-assignment-qumaron-unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1i1b6q2g/obj/arm64-v8a/libswappywrapper.so	56c37a9fb8e92d28
+4	877	1736265358636659458	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	7823e457794ffad3
+7	304	1736265358062818488	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	ef231fd120b2a543
