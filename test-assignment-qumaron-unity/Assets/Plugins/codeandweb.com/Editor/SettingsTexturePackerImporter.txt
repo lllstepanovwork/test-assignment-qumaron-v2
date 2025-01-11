@@ -3,11 +3,14 @@ tpsheetFileNames:
 - Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-buildings.tpsheet
 - Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-general.tpsheet
 - Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-road.tpsheet
+- Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-tmp.tpsheet
 textureFileNames:
 - Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-buildings.png
 - Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-general.png
 - Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-road.png
+- Assets/OleksiiStepanov/Sprites/qumaron-test-assignment-tmp.png
 normalmapFileNames:
+- 
 - 
 - 
 - 

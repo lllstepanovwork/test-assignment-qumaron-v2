@@ -46,5 +46,16 @@
     }
     
     #endregion
+    
+    #region UI
+    
+    public enum TipType
+    {
+        Tap,
+        Drag,
+        Pan,
+    }
+    
+    #endregion
 
 }

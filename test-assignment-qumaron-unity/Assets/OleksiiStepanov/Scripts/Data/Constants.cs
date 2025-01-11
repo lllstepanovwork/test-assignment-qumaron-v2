@@ -6,9 +6,20 @@ namespace OleksiiStepanov.Data
     {
         #region UI
 
-        public const string BuildType = "Creation Mode:";
+        public const string PanTip = "Tap and hold to pan the camera.";
+        public const string TapTip = "Tap a grid cell to build a road.";
+        public const string DragTip = "Tap and hold on a building to drag it.";
 
         #endregion
+        
+        #region TextMeshProSpriteShortcuts
+
+        public const string TmpTapPan = "<sprite name=\"icon-touch-pan\">";
+        public const string TmpTapDrag = "<sprite name=\"icon-touch-drag\">";
+        public const string TmpTapTap = "<sprite name=\"icon-touch-tap\">";
+
+        #endregion
+
 
         
         #region Scenes

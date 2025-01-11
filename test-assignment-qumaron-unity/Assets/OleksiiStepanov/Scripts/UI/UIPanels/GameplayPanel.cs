@@ -1,6 +1,9 @@
+using DG.Tweening;
 using OleksiiStepanov.Data;
 using OleksiiStepanov.Gameplay;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace OleksiiStepanov.UI
@@ -10,7 +13,11 @@ namespace OleksiiStepanov.UI
         [Header("Content")]
         [SerializeField] private Button redoButton;
         [SerializeField] private Button undoButton;
-        
+
+        [Header("TipPanel")]
+        [SerializeField] private CanvasGroup tipPanelCanvasGroup;
+        [SerializeField] private TMP_Text tipText;
+
         private CreationMode _creationMode;
         
         public void SetCreationMode(CreationMode creationMode)
@@ -22,12 +29,16 @@ namespace OleksiiStepanov.UI
             switch (creationMode)
             {
                 case CreationMode.None:
+                    ShowTip(TipType.Pan);
                     break;
                 case CreationMode.Building2x2:
+                    ShowTip(TipType.Drag);
                     break;
                 case CreationMode.Building2x3:
+                    ShowTip(TipType.Drag);
                     break;
                 case CreationMode.Road:
+                    ShowTip(TipType.Tap);
                     ShowUndoRedoButtons(true);
                     break;
             }
@@ -108,6 +119,26 @@ namespace OleksiiStepanov.UI
             if (_creationMode == CreationMode.Road)
             {
                 undoButton.interactable = undoStatus;
+            }
+        }
+
+        private void ShowTip(TipType tipType)
+        {
+            tipPanelCanvasGroup.gameObject.SetActive(true);
+            tipPanelCanvasGroup.alpha = 0;
+            tipPanelCanvasGroup.DOFade(1, 0.5f);
+            
+            switch (tipType)
+            {
+                case TipType.Pan:
+                    tipText.text = Constants.TmpTapPan + Constants.PanTip;
+                    break;
+                case TipType.Drag:
+                    tipText.text = Constants.TmpTapDrag + Constants.DragTip;
+                    break;
+                case TipType.Tap:
+                    tipText.text = Constants.TmpTapTap + Constants.TapTip;
+                    break;
             }
         }
 

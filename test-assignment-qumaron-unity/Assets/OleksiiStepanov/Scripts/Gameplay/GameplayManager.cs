@@ -27,16 +27,22 @@ namespace OleksiiStepanov.Gameplay
             {
                 buildingManager.CreateStartingBuilding();
 
-                float gridBorderX = gridManager.GetGridBorderX();
-                float gridBorderY = gridManager.GetGridBorderY();
+                InitPanManager();
                 
-                Vector2 worldBorder = new Vector2(gridBorderX, gridBorderY);
-                
-                panManager.Init(worldBorder);
-                panManager.EnablePanning(true);
+                SetCreationMode(CreationMode.None);
                 
                 onComplete?.Invoke();   
             });
+        }
+        
+        private void InitPanManager()
+        {
+            float gridBorderX = gridManager.GetGridBorderX();
+            float gridBorderY = gridManager.GetGridBorderY();
+                
+            Vector2 worldBorder = new Vector2(gridBorderX, gridBorderY);
+                
+            panManager.Init(worldBorder);
         }
 
         public void SetCreationMode(CreationMode creationMode)
